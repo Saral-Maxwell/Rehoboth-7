@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rehoboth IT Training</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="Rehoboth.jpeg">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-6kzXkjL3zUV+1El+3yokY90VuQhdGBixMbiOblLDbRA9QYASb9RXyTZsnLhQY++TWQ9aY+e10z7k+eI+scyn9w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- intl-tel-input CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.min.css" />
+
+  <!-- Google reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <!-- Inline CSS -->
+  <style>
+    body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  /* Adjust layout for mobile */
+}
+
+
+    .quick-contact {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 9999;
+    }
+
+    #toggleQuickContact {
+      background-color: #25d366;
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .quick-contact-popup {
+      display: none;
+      flex-direction: column;
+      background-color: white;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      margin-top: 10px;
+    }
+
+    .quick-contact-popup a {
+      color: #333;
+      text-decoration: none;
+      margin: 5px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .quick-contact-popup a:hover {
+      color: #25d366;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    footer a:hover {
+      color: #25d366;
+    }
+
+    #goTopBtn {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 50%;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+#goTopBtn:hover {
+  background-color: #555;
+}
+
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+  
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<script>
+  const input = document.querySelector("#phone");
+  window.intlTelInput(input, {
+    initialCountry: "in", // Default India
+    separateDialCode: true,
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+  });
+</script>
+
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="logo">Rehoboth</div>
+    <nav id="nav-menu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#courses">Courses</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h1>Welcome to Rehoboth Technologies</h1>
+    <p>From Basics To Brilliance</p>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      Rehoboth is dedicated to providing top-tier IT training for students and professionals. Our mission is to empower learners with in-demand tech skills and industry-relevant knowledge tailored for today's fast-paced tech world.
+    </p>
+  </section>
+
+  <!-- Courses Section -->
+  <section id="courses">
+    <h2>Our Courses</h2>
+    <div class="course-list">
+      <div class="course">
+        <h3>Python with AI</h3>
+        <p>Python, SQL, Machine Learning, Deep Learning and Artificial Intelligence</p>
+        <a href="#contact" class="enroll-button">Enroll Now</a>
+      </div>
+      <div class="course">
+        <h3>Data Analytics</h3>
+        <p>Python, SQL, Power BI, MS Excel</p>
+        <a href="#contact" class="enroll-button">Enroll Now</a>
+      </div>
+      <div class="course">
+        <h3>We Offer You</h3>
+        <p>1 hour aptitude class with each course you select</p>
+      </div>
+    </div>
+  </section>
+
+ <!-- Contact Section -->
+<section id="contact" style="padding: 50px 20px; background: #f9f9f9;">
+    <h2 style="text-align: center; margin-bottom: 30px;">Contact Us</h2>
+    <div class="contact-form" style="max-width: 600px; margin: 0 auto;">
+      <form id="contactForm" style="display: flex; flex-direction: column; gap: 15px;">
+        
+        <input type="text" id="name" name="name" placeholder="Your Name" required style="padding: 10px; font-size: 16px;" />
+  
+        <input type="email" id="email" name="email" placeholder="Your Email" required style="padding: 10px; font-size: 16px;" />
+        
+        <!-- Phone Number with Country Code -->
+        <input id="phone" type="tel" name="phone" class="form-control" required style="padding: 10px; font-size: 16px;" />
+        
+        <select id="course" name="course" required style="padding: 10px; font-size: 16px;">
+          <option value="">Select a Course</option>
+          <option value="Data Science with AI">Python with AI</option>
+          <option value="Data Analytics">Data Analytics</option>
+        </select>
+  
+        <input type="text" id="preferred_time" name="preferred_time" placeholder="Preferred Time to Call (e.g., 3 PM - 5 PM)" required style="padding: 10px; font-size: 16px;" />
+  
+        <textarea name="message" placeholder="Your Message" required style="padding: 10px; font-size: 16px; min-height: 100px;"></textarea>
+  
+        <div class="g-recaptcha" data-sitekey="6LfqkSQrAAAAAEmLU1jMKK-1CUt5w7X_Ov-vj8g9"></div>
+
+
+
+
+  
+        <button type="submit" style="padding: 12px; background-color: #102C57; color: white; border: none; font-size: 16px; cursor: pointer;">
+          Send
+        </button>
+      </form>
+    </div>
+  </section>
+  
+
+  <!-- Location Section -->
+  <section id="location">
+    <h2>Our Location</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15557.610934449216!2d80.0999287287536!3d12.881805166609553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5258bea79daf6b%3A0x5e45969e63bb7d17!2sNedumgundram%2C%20Tamil%20Nadu%20600048!5e0!3m2!1sen!2sin!4v1745590074116!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Rehoboth Technologies. All rights reserved.</p>
+    <p style="margin-top: 10px;">Follow us on:</p>
+    <div style="display: flex; justify-content: center; gap: 20px; align-items: center; flex-wrap: wrap; margin-top: 10px;">
+      <a href="https://www.instagram.com/krishnakumar_psk" target="_blank">
+        <img src="icons8-instagram-logo-94.png" alt="Instagram" width="24" height="24" style="margin-right: 8px;"> Instagram
+      </a>
+      <a href="https://www.linkedin.com/in/krishnakumar_psk" target="_blank">
+        <img src="icons8-linkedin-logo-48.png" alt="LinkedIn" width="24" height="24" style="margin-right: 8px;"> LinkedIn
+      </a>
+    </div>
+  </footer>
+
+  <!-- Quick Contact Popup -->
+  <div class="quick-contact" id="quickContact">
+    <button id="toggleQuickContact">📞</button>
+    <div class="quick-contact-popup" id="quickContactPopup">
+      <a href="tel:+919876543210" target="_blank">
+        <i class="fas fa-phone"></i> Call Us
+      </a>
+      <a href="https://wa.me/+918925700625" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+<!-- Back to Top Button -->
+  <button id="goTopBtn" title="Go to top">↑</button>
+
+
+  <!-- Intl Tel Input JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
+
+  <!-- JavaScript -->
+  <script>
+    const elements = document.querySelectorAll('.fade-in');
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+      el.classList.add('show');
+    }
+  });
+});
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.getElementById('menu-toggle');
+      const nav = document.getElementById('nav-menu');
+      toggle.onclick = () => nav.classList.toggle('active');
+
+      const phoneInputField = document.querySelector("#phone");
+      const phoneInput = window.intlTelInput(phoneInputField, {
+        initialCountry: "in",
+        preferredCountries: ["in", "us", "gb", "ae"],
+        separateDialCode: true,
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+      });
+
+      const form = document.getElementById("contactForm");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = phoneInput.getNumber();
+        const course = document.getElementById("course").value;
+        const time = document.getElementById("preferred_time").value.trim();
+        const message = form.message.value.trim();
+        const captchaResponse = grecaptcha.getResponse();
+
+
+        if (!name || !email || !phone || !course || !time || !message) {
+          alert("Please fill in all the fields.");
+          return;
+        }
+
+        if (!captchaResponse) {
+          alert("Please verify you are a human.");
+          return;
+        }
+
+        fetch("https://formsubmit.co/ajax/saralmaxwell.62005@gmail.com", {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            mobile: phone,
+            course,
+            preferred_time: time,
+            message,
+            "g-recaptcha-response": captchaResponse,
+            _captcha: "false"
+          })
+        })
+        .then(response => {
+          if (response.ok) {
+            alert("Form submitted successfully!");
+            form.reset();
+            grecaptcha.reset();
+          } else {
+            alert("There was a problem submitting the form. Please try again.");
+          }
+        })
+        .catch(error => {
+          alert("An error occurred. Please try again later.");
+          console.error(error);
+        });
+      });
+
+      document.getElementById("toggleQuickContact").addEventListener("click", function () {
+        const popup = document.getElementById("quickContactPopup");
+        popup.style.display = popup.style.display === "flex" ? "none" : "flex";
+      });
+    });
+  </script>
+  <script>
+    const goTopBtn = document.getElementById("goTopBtn");
+  
+    window.onscroll = function () {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        goTopBtn.style.display = "block";
+      } else {
+        goTopBtn.style.display = "none";
+      }
+    };
+  
+    goTopBtn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
+  
+</body>
+</html>
